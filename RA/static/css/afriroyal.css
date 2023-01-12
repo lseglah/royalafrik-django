@@ -1,0 +1,554 @@
+@charset "UTF-8";
+
+body{
+	margin:0px;
+	padding:0px;
+}
+
+.collapse navbar-collapse{
+	margin-left: 5px;
+}
+
+
+.img{
+	width: 30px;
+	height: auto;
+	margin: 10px;
+}
+
+
+
+
+#book{
+	position: absolute;
+	bottom: 42%;
+	top: 850px;
+	height: auto;
+	border-radius: 5px;
+	font-size: 14pt;
+	text-align: center;
+	max-width: 80%;
+	max-height: auto;
+	shadow: 0px 4px 8px 0px rgba(0,0,0,0.84);
+	
+}
+
+#book form{
+	background-color: #FFFFFF;
+	color: #606060;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+	color: #FF7600;
+
+}
+  .nav-link:hover{
+		color: #707070;
+	}
+	.nav-link:focus {
+    text-decoration: none; }
+  .nav-link.disabled {
+    color: #FF7600; }
+
+.row .col-md-6 .img-fluid {
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	margin-top: 94px;
+	margin-left: 4px;
+}
+.col-md-6 {
+	margin-top: 100px;
+	margin-left: 0px;
+	padding-top: 0px;
+}
+.col-md-6 h2 {
+	color: #FF7600;
+	font-family: "Arial Black", sans-serif;
+	font-size: 24pt;
+	text-align: left;
+	margin-left: 14px;
+	margin-top: 94px;
+}
+.row .col-md-6 h3 {
+	color: #606060;
+	font-family: "Arial Black", sans-serif;
+	font-size: 26pt;
+	text-align: left;
+	margin-left: 10px;
+}
+.row .col-md-6 p {
+	margin-left: 10px;
+	color: #707070;
+	font-style: normal;
+	font-family: Arial, sans-serif;
+}
+.row .col-md-6 .btn.my-2.my-sm-0 {
+	background-color: #FF7600;
+	color: #FFFFFF;
+	margin-left: 14px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	margin-top: 24px;
+}
+.form-inline.my-2.my-lg-0 .btn.my-2.my-sm-0 {
+	background-color: #FF7600;
+	color: #FFFFFF;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.form-inline.my-2.my-lg-0 .btn.my-2.my-sm-0:hover {
+	background-color: #707070;
+	color: #FFFFFF;
+
+}
+
+
+
+.navbar-brand {
+	color: #707070;
+	background-image: url(icons/Afriroyal%20logo-01.svg);
+	background-repeat: no-repeat;
+	padding-left: 52px;
+	min-width: 0px;
+	min-height: 0px;
+	background-size: 47px auto;
+	background-position: -1% 43%;
+}
+
+
+#home {
+	position: relative;
+}
+
+
+.rcolumn {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.rcard:after {
+  content: "";
+  display: table;
+  clear: both;
+	margin-left: auto;
+  margin-right: auto;
+}
+
+
+.card-text {
+	color: rgba(112,112,112,1.00);
+	font-size: 16pt;
+	text-align: left;
+}
+.card-title {
+	color: #606060;
+	text-align: left;
+	font-weight: bold;
+	font-size: 18pt;
+}
+.btn {
+	background-color: #FF7600;
+	color: #FFFFFF;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.btn:hover{
+	background-color: #707070;
+	color: #FFFFFF;
+}
+
+
+.card-price {
+	color: #606060;
+	font-weight: bold;
+}
+#facility {
+	position: relative;
+	padding-top: 200px;
+	height: auto;
+}
+
+
+#event{
+	height: auto;
+	align-content: center;
+}
+
+
+
+#abt1{
+	position: relative;
+	align-content: center;
+	padding-bottom: 70px;
+	margin-bottom: 170px;
+}
+
+
+.abt {
+	position: absolute;
+	left: 10%;
+	background-color: #FFFFFF;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.84);
+	max-width: 80%;
+	max-height: auto;
+	margin-top: 190px;
+	padding: 30px;
+
+
+
+}
+.abt h2 {
+	color: rgba(255,118,0,1.00);
+	font-size: 22pt;
+	text-align: left;
+	font-weight: bold;
+}
+
+.abt h3 {
+	color: #707070;
+	font-size: 20pt;
+	text-align: left;
+}
+
+.abt p {
+	color: #707070;
+	font-size: 16pt;
+	text-align: left;
+}
+
+
+.faci {
+	position: absolute;
+	left: 60%;
+	background-color: #FFFFFF;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.84);
+	max-width: auto;
+	max-height: auto;
+	margin-top: 30px;
+	padding-left: 30px;
+	padding-top: 54px;
+}
+.faci h2 {
+	color: rgba(255,118,0,1.00);
+	font-size: 24pt;
+	text-align: left;
+}
+.faci ul {
+	color: rgba(112,112,112,1.00);
+	font-size: 15pt;
+	text-align: left;
+	text-decoration: none;
+	white-space: normal;
+	line-height: 60px;
+	margin: 32px;
+	list-style: none;
+	margin-left: -30px;
+}
+
+
+.img-fluid {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+.navbar.fixed-top.navbar-expand-lg {
+	background-color: rgba(255,255,255,1.00);
+	color: rgba(255,118,0,1.00);
+	height: 120px;
+}
+
+.navbar-toggler-icon {
+	color: #FF7600;
+}
+.navbar-toggler {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background-color: rgba(255,118,0,1.00);
+	color: rgba(255,255,255,1.00);
+}
+
+
+.navbar-toggler:hover {
+	background-color: #707070;
+	color: #FFFFFF;
+}
+
+
+#room h2{
+	color: #FF7600;
+	font-weight: bold;
+}
+
+#room h3{
+	color: #707070;
+}
+
+.rooms {
+	margin-top: 10px;
+}
+
+.row .col-md-6 h2 {
+	margin-top: 94px;
+	text-align: left;
+	font-weight: bold;
+	font-size: 24pt;
+}
+.row .col-md-6 h3 {
+	font-size: 18pt;
+}
+.row .col-md-6 p {
+	font-size: 18pt;
+	margin-bottom: 30px;
+}
+#home h1 {
+	position: absolute;
+	bottom: 42%;
+	left: 20%;
+	color: rgba(255,255,255,1.00);
+	text-shadow: 4px 5px 8px rgba(112,112,112,1.00);
+	font-size: 4em;
+	text-align: center;
+}
+
+
+
+
+
+.footer {
+  width: 100%;
+  background-color: #FF7600;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  list-style: none;
+}
+
+.footer h2{
+  font-size: 20px;
+	margin: 10px;
+}
+
+.frow:after {
+  content: "";
+  display: table;
+  clear:both;
+}
+
+.fcolumn {
+  float:left;
+  width: 25%;
+}
+
+
+.fcolumn button {
+	background-color: rgba(255,255,255,1.00);
+	color: rgba(255,118,0,1.00);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-color: rgba(255,255,255,1.00);
+	margin: 20px;
+}
+
+.fcolumn button:hover{
+	background-color: #FF7600;
+	color: #FFFFFF;
+}
+
+
+
+.navbar.fixed-top.navbar-expand-lg {
+	-webkit-box-shadow: 0px 3px 16px rgba(112,112,112,1.00);
+	box-shadow: 0px 3px 16px rgba(112,112,112,1.00);
+}
+#navbarSupportedContent1 {
+	background-color: rgba(255,255,255,1.00);
+	padding-left: 100px;
+}
+
+
+.card-body .btn {
+	background-color: #FF7600;
+	color: #FFFFFF;
+}
+
+.card-body .btn:hover {
+	background-color: #707070;
+	color: #FFFFFF;
+}
+
+
+
+
+.card-body .card-price {
+	text-align: left;
+	font-size: 12pt;
+	margin-bottom: 5px;
+	margin-top: -12px;
+}
+.container #event {
+	margin-top: 20px;
+	padding-top: 12px;
+	padding-bottom: 20px;
+}
+.container #facility {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-top: 25px;
+}
+.container #rooms {
+	width: auto;
+	margin-top: 20px;
+}
+#rooms h3 {
+	color: rgba(112,112,112,1.00);
+	font-size: 14pt;
+	text-align: left;
+}
+#rooms h2 {
+	color: rgba(255,118,0,1.00);
+	font-size: 21pt;
+	text-align: left;
+	margin-top: 20px;
+}
+.navbar-brand {
+	background-image: url(../icons/Afriroyal%20logo-01.svg);
+}
+
+
+@media screen and (max-width:800px){
+
+	#abt1{
+		padding-bottom: 200px;
+		margin-bottom: 400px;
+	}
+
+
+	#facility .faci {
+		left: 20%;
+		margin-top: 40px;
+		padding-left: 15px;
+		padding-top: 34px;
+		text-align: center;
+	}
+
+
+	.faci ul {
+	font-size: 12pt;
+	line-height: normal;
+
+}
+
+	.column {
+    width: 100%;
+  }
+
+	#home h1 {
+	font-size: 2em;
+}
+
+.abt{
+	margin-top: 150px;
+}
+
+#book{
+	top: 50%;
+	height: auto;
+	font-size: 14pt;
+}
+
+
+}
+
+
+
+
+@media screen and (max-width:600px){
+
+	#facility .faci {
+		left: 20%;
+		margin-top: 40px;
+		padding-left: 15px;
+		padding-top: 34px;
+		text-align: center;
+	}
+
+
+	.faci ul {
+	font-size: 12pt;
+	line-height: normal;
+
+}
+
+.rcolumn {
+	width: 100%;
+}
+
+.abt{
+	margin-top: 150px;
+}
+
+
+.fcolumn {
+    width: 100%;
+}
+
+	#home h1 {
+	font-size: 2em;
+}
+
+#about1 .about1 {
+	top: 15%;
+	margin-top: 50px;
+	padding: 30px;
+	width: auto;
+
+}
+
+
+#about
+
+#event {
+	margin-top: 100px;
+
+}
+
+#room {
+	margin-top: 50px;
+}
+
+#abt1{
+	padding-bottom: 200px;
+	margin-bottom: 550px;
+}
+
+#book{
+	top: 45%;
+	height: auto;
+	font-size: 14pt;
+}
+
+
+}

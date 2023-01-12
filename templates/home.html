@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- ========================= SECTION MAIN ========================= -->
+
+<div class="container">
+    <div class="row" id="home">
+      <h1>Welcome to Afri Royal Hotel</h1>
+    <img src="{% static 'images/1b.jpg' %}" class="img-fluid" alt="Home"></div>
+
+<section id="about" class="row">
+    <div class="offset-lg-1 col-lg-10">
+        <div class="row">
+          <div class="col-md-6"><img src="{% static 'images/9.jpeg' %}" class="img-fluid" alt="about"></div>
+          <article class="col-md-6">
+			<h2>About Us</h2>
+			  <h3>The best holidays starts with us! </h3>
+			<p>
+			A prestigious boutique style
+accommodation unit not far from Kotoka International Airport and township of East-Legon. ully equiped en suit 16 rooms and other features..
+			</p>
+
+		  </article>
+        </div>
+      </div>
+    </section>
+<section id="room" class="container">
+	<div class="offset-lg-1 col-lg-10">
+	<article class="rooms">
+	<h2>Our Living Room</h2>
+	<h3>The most memorable rest time starts here! </h3>
+	</article>
+<div class="row">
+
+			
+	<!-- <div class="column"> -->
+	<div class="col-md-4">
+		<div class="card card-product-grid">
+			<img src="{% static 'images/5.jpeg' %}" class="card-img-top" alt="standard room">
+			<figcaption class="info-wrap">
+				<a href="#" class="title">STANDARD ROOM</a>
+				<div class="price mt-1">GHS350.00</div> <!-- price-wrap.// -->
+				<div class="rating-star"> 
+					<span>
+						<i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif single_product.averageReview >= 0.5 and single_product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif single_product.averageReview >= 1.5 and single_product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif single_product.averageReview >= 2.5 and single_product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif single_product.averageReview >= 3.5 and single_product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif single_product.averageReview >= 4.5 and single_product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+
+					</span>
+				</div>
+				<a href="{% url 'hotel' %}" class="btn">BOOK NOW</a>
+			</figcaption>
+		</div>
+	</div> 
+	<!-- </div> -->
+
+	<!-- <div class="column"> -->
+	<div class="col-md-4">
+		<div class="card card-product-grid">
+			<img src="{% static 'images/7.jpeg' %}" class="card-img-top" alt="standard room">
+			<figcaption class="info-wrap">
+				<a href="#" class="title">QUEEN ROOM</a>
+				<div class="price mt-1">GHS450.00</div> <!-- price-wrap.// -->
+				<div class="rating-star">
+					<span>
+						<i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif single_product.averageReview >= 0.5 and single_product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif single_product.averageReview >= 1.5 and single_product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif single_product.averageReview >= 2.5 and single_product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif single_product.averageReview >= 3.5 and single_product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif single_product.averageReview >= 4.5 and single_product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+
+					</span>
+				</div>
+				<a href="{% url 'hotel' %}" class="btn">BOOK NOW</a>
+			</figcaption>
+		</div>
+	</div> 
+	<!-- </div> -->
+
+	<!-- <div class="column"> -->
+	<div class="col-md-4">
+		<div class="card card-product-grid">
+			<img src="{% static 'images/3.jpeg' %}" class="card-img-top" alt="king room">
+			<figcaption class="info-wrap">
+				<a href="#" class="title">KING ROOM</a>
+				<div class="price mt-1">GHS550.00</div> 
+				<p class="card-text"> </p>
+
+				<!-- price-wrap.// -->
+				 <div class="rating-star"> 
+					<span>
+						<i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif single_product.averageReview >= 0.5 and single_product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif single_product.averageReview >= 1.5 and single_product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif single_product.averageReview >= 2.5 and single_product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif single_product.averageReview >= 3.5 and single_product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif single_product.averageReview >= 4.5 and single_product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+
+					</span>
+				</div>
+				<a href="{% url 'hotel' %}" class="btn">BOOK NOW</a>
+			</figcaption>
+			
+		</div>
+	</div> 
+	<!-- </div> -->
+
+
+	
+     
+
+</div>
+</div>
+</section>
+<section class="row" id="facility">
+	<div class="faci">
+	<h2>Facilities</h2>
+	<ul>
+	<li> <span><img class="img" src="{% static 'icons/wifi.svg' %}"  alt="facilities">Wi-fi Access</span></li>
+  <li> <span><img class="img" src="{% static 'icons/tv-01.svg' %}"  alt="facilities">Flat Screen Tv's</span></li>
+  <li> <span><img class="img" src="{% static 'icons/checkroom.svg' %}"  alt="facilities">Fully Equipped Wardrobes</span></li>
+  <li><span> <img class="img" src="{% static 'icons/living.svg' %}"  alt="facilities">Living Room</span></li>
+  <li> <span><img class="img" src="{% static 'icons/ac_unit.svg' %}"  alt="facilities">Air Conditioned Rooms through out</span></li>
+  <li><span> <img class="img" src="{% static 'icons/kitchen.svg' %}"  alt="facilities">Refrigerator in each room</span></li>
+  <li><span> <img class="img" src="{% static 'icons/power.svg' %}"  alt="facilities">Generator Unit</span></li>
+  <li> <span><img class="img" src="{% static 'icons/yard.svg' %}"  alt="facilities">Landscape Garden</span></li>
+
+	</ul>
+	</div>
+<img src="{% static 'images/1c.jpg' %}" class="img-fluid" alt="facilities">
+</section>
+
+
+<section id="event" class="container">
+    <div class="offset-md-1 col-md-10">
+        <div class="row">
+
+          <article class="col-md-6">
+			<h2>Events</h2>
+			  <h3>The best holidays starts with us! </h3>
+			<p>
+				You are welcome to host any kind of event at our Hotel and have a blast at it.
+				What are you waiting for? 
+            </p> 
+			
+			<a href="{% url 'hotel' %}" class="btn" type="submit">BOOK NOW</a>
+
+		  </article>
+      <div class="col-md-6"><img src="{% static 'images/12.jpeg' %}" class="img-fluid" alt="about"></div>
+        </div>
+      </div>
+    </section>
+	
+
+
+</body>
+</html>
+{% endblock %}

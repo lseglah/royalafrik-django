@@ -1,0 +1,54 @@
+{% load static %}
+
+
+
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <a class="navbar-brand" href="{% url 'home' %}">Afri Royal Hotel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+          <ul class="navbar-nav mr-auto">
+            {% for category in links %}
+              <li class="nav-item"> <a class="nav-link" href="{{ category.get_url }}">{{ category.category_name }}</a></li>
+            {% endfor %}
+            <li class="nav-item"> <a class="nav-link" href="#facility">Facilities</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#about">About Us</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#contact">Contact Us</a> </li>
+          </ul>
+        </div>
+          <form class="form-inline my-2 my-lg-0">
+
+            <!-- <button class="btn my-2 my-sm-0" type="submit">BOOK NOW</button> -->
+
+            {% if user.id is None %}
+            <div class="widget-header">
+                <small class="title text-muted">Welcome guest!</small>
+                <div> 
+                    <a href="#">Sign in</a> <span class="dark-transp"> | </span>
+                    <a href="#"> Register</a>
+                </div>
+            </div>
+            {% else %}
+            <div class="widget-header">
+                <small class="title text-muted">Welcome {{user.first_name}}!</small>
+                <div> 
+                    <a href="#">Dashboard</a> <span class="dark-transp"> | </span>
+                    <a href="#"> Logout</a>
+                </div>
+            </div>
+
+            {% endif %}
+            <a href="#" class="widget-header pl-3 ml-3">
+                <div class="icon icon-sm rounded-circle border"><i class="fa fa-book"></i></div>
+                <span class="badge badge-pill badge-danger notify">{{reservation_count}}</span>
+            </a>
+        </div>
+          </form>
+        </div>
+      </nav>
+        </div> <!-- container.// -->
+    </section> <!-- header-main .// -->
+    
+    
+    
+    
+    </header> <!-- section-header.// -->
