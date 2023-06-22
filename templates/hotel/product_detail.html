@@ -27,7 +27,7 @@
 		</aside>
 		<main class="col-md-6 border-left">
 
-		<form action="#" method="POST">
+		<form action="{% url 'add_reservation' single_product.id %}" method="POST">
 			{% csrf_token %}
 					<article class="content-body">
 
@@ -39,7 +39,9 @@
 							<i class="fa fa-star{% if single_product.averageReview < 2.5 %}-o{% elif single_product.averageReview >= 2.5 and single_product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
 							<i class="fa fa-star{% if single_product.averageReview < 3.5 %}-o{% elif single_product.averageReview >= 3.5 and single_product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
 							<i class="fa fa-star{% if single_product.averageReview < 4.5 %}-o{% elif single_product.averageReview >= 4.5 and single_product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
-<span>{{single_product.countReview}} reviews</span>
+							<span>{% if single_product.countReview <= 1 %} ({{single_product.countReview}} Review) {% else %}
+								({{single_product.countReview}} Reviews) {% endif %}
+							</span>
 						</span>
 					</div>
 
@@ -52,35 +54,51 @@
 
 					<hr>
                     
-						<div class="row">
-							<div class="item-option-select">
-								<h6>Choose Event</h6>
-								<select name="event" class="form-control" required>
-									<option value="" disabled selected>Select</option>
-									{% for i in single_product.variation_set.events %}
-									<option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
-									{% endfor %}
-								</select>
+					<!-- <div class="row"> --> 
+							<div class="form-row">
+								
+								<!-- Input Div -->
+							<div class="input-div" required>
+								<label for="id_check_in">Check In : </label>
+								<input type="datetime-local" class="form-control" id="id_check_in" name="check_in">
 							</div>
-						</div>
-                        
-                    
-
-						<div class="row">
-							<div class="item-option-select">
-								<h6>Select Size</h6>
-								<select name="size" class="form-control">
-									<option value="" disabled selected>Select</option>
-									{% for i in single_product.variation_set.sizes %}
-									<option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
-									{% endfor %}
-								</select>
+			
+							<!-- Input Div -->
+							<div class="input-div" required>
+								<label for="id_check_out">Check Out : </label>
+								<input type="datetime-local" class="form-control" id="id_check_out" name="check_out">
 							</div>
-						</div>
+						 </div> 
+					
+				
+					<hr>
+							<div class="form-row">
+								<div class="item-option-select">
+									<label>No. of Adult</label>
+									<select name="adult" class="form-control" required>
+										<option value="" disabled selected>Select</option>
+										{% for i in single_product.variation_set.adults %}
+										<option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
+										{% endfor %}
+									</select>
+								</div> 
+					
+								<div class="item-option-select">
+									<label>No. of Children</label>
+									<select name="children" class="form-control" required>
+										<option value="" disabled selected>Select</option>
+										{% for i in single_product.variation_set.children %}
+										<option value="{{ i.variation_value }}">{{ i.variation_value }}</option>
+										{% endfor %}
+									</select>
+								</div>
+							</div>
+							
+						
                     
 						<hr>
 						{% if single_product.stock <= 0 %}
-							<h5 class="text-danger">Out of Stock</h5>
+							<h5 class="text-danger">These rooms are fully occupied</h5>
 							{% else %}
 						   <button type="submit" class="btn  btn-danger"> <span class="text">Make Reservations</span> <i class="fas fa-book"></i>  </button>
 						{% endif %}
@@ -98,7 +116,7 @@
 
 
 
-	<form action="#" method="POST">
+	<form action="{% url 'submit_review' single_product.id %}" method="POST">
 		{% csrf_token %}
 		<h5>Write Your Review</h5>
 		{{single_product.averageReview}}
@@ -136,7 +154,7 @@
 			{% endif %}
 
 		</div>
-
+{% include 'includes/alerts.html' %}
 	</form>
 	<br>
 	<header class="section-heading">

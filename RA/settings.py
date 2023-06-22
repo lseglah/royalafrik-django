@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import os
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ffkm&d#g32_q^mj3g8u%ix#c-bzihe559rf9(1knqv7niih!9v'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -40,6 +42,9 @@ INSTALLED_APPS = [
     'hotel',
     'category',
     'accounts',
+    'reservations',
+    'orders',
+    #'core',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'category.context_processors.menu_links',
+                'reservations.context_processors.counter',
             ],
         },
     },
@@ -128,9 +134,25 @@ STATICFILES_DIRS = [
 ]
 
 
+
 #media files configuration
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
+
+
+
+from django.contrib.messages import constants as messages
+MESSAGES_TAGS = {
+    messages.ERROR: 'danger',
+}
+
+
+# SMTP configuration
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

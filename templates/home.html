@@ -3,13 +3,43 @@
 
 {% block content %}
 <!-- ========================= SECTION MAIN ========================= -->
+<!--<div class="hero-image text-center">
+	<img src="{% static 'images/1b.jpg' %}" class="img-fluid" alt="Home">
+	<div class="hero text-center">
+		<div class="col-md-12 text-center">
+			<div class="hero-text col-md-8 text-center">
+	
+				<h1>Welcome to Afri Royal Hotel</h1>
+				<p>Resize this responsive page to see the effect!</p>
+				<button class="btn btn-primary"> Book a Room  </button>
+				<button class="btn btn-primary"> Book an Event Space  </button>
+	
+		</div>
 
-<div class="container">
-    <div class="row" id="home">
-      <h1>Welcome to Afri Royal Hotel</h1>
-    <img src="{% static 'images/1b.jpg' %}" class="img-fluid" alt="Home"></div>
+		</div>
+		
 
-<section id="about" class="row">
+	</div>
+	
+	
+	
+</div>-->
+
+<div class="container-fluid text-center">
+	<img src="{% static 'images/1b.jpg' %}" class="img-fluid" alt="Home">
+	<div class="home text-center">
+	
+			<h1>Welcome to Afri Royal Hotel</h1>
+			<p>Need a place for your relaxation !</p>
+			<a href="{% url 'hotel' %}" class="btn">BOOK NOW</a>
+
+
+	</div>
+	
+</div>
+
+
+<section id="about" class="container">
     <div class="offset-lg-1 col-lg-10">
         <div class="row">
           <div class="col-md-6"><img src="{% static 'images/9.jpeg' %}" class="img-fluid" alt="about"></div>
@@ -18,7 +48,7 @@
 			  <h3>The best holidays starts with us! </h3>
 			<p>
 			A prestigious boutique style
-accommodation unit not far from Kotoka International Airport and township of East-Legon. ully equiped en suit 16 rooms and other features..
+accommodation unit not far from Kotoka International Airport and township of East-Legon.Fully equiped en suit 16 rooms and other features..
 			</p>
 
 		  </article>
@@ -40,7 +70,7 @@ accommodation unit not far from Kotoka International Airport and township of Eas
 			<img src="{% static 'images/5.jpeg' %}" class="card-img-top" alt="standard room">
 			<figcaption class="info-wrap">
 				<a href="#" class="title">STANDARD ROOM</a>
-				<div class="price mt-1">GHS350.00</div> <!-- price-wrap.// -->
+				<div class="price mt-1">GHS315.00</div> <!-- price-wrap.// -->
 				<div class="rating-star"> 
 					<span>
 						<i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif single_product.averageReview >= 0.5 and single_product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
@@ -63,7 +93,7 @@ accommodation unit not far from Kotoka International Airport and township of Eas
 			<img src="{% static 'images/7.jpeg' %}" class="card-img-top" alt="standard room">
 			<figcaption class="info-wrap">
 				<a href="#" class="title">QUEEN ROOM</a>
-				<div class="price mt-1">GHS450.00</div> <!-- price-wrap.// -->
+				<div class="price mt-1">GHS349.00</div> <!-- price-wrap.// -->
 				<div class="rating-star">
 					<span>
 						<i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif single_product.averageReview >= 0.5 and single_product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
@@ -86,7 +116,7 @@ accommodation unit not far from Kotoka International Airport and township of Eas
 			<img src="{% static 'images/3.jpeg' %}" class="card-img-top" alt="king room">
 			<figcaption class="info-wrap">
 				<a href="#" class="title">KING ROOM</a>
-				<div class="price mt-1">GHS550.00</div> 
+				<div class="price mt-1">GHS428.00</div> 
 				<p class="card-text"> </p>
 
 				<!-- price-wrap.// -->
@@ -150,8 +180,8 @@ accommodation unit not far from Kotoka International Airport and township of Eas
 		  </article>
       <div class="col-md-6"><img src="{% static 'images/12.jpeg' %}" class="img-fluid" alt="about"></div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 	
 
 

@@ -1,14 +1,45 @@
 @charset "UTF-8";
 
-body{
+body, html {
 	margin:0px;
 	padding:0px;
+	font-family: "Arial Black", sans-serif;
+	height: 100%;
+}
+
+/* The hero image */
+.hero-image {
+	/* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
+
+	background-image: linear-gradient(rgba(0,0,0,0.5),
+	rgba(0,0,0,0.5)),url("1b.jpg");
+	height: 50%;
+
+	/* Position and center the image to scale nicely on all screens */
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-image {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: white;
 }
 
 .collapse navbar-collapse{
 	margin-left: 5px;
 }
 
+.hero{
+	padding-top: 30%;
+}
 
 .img{
 	width: 30px;
@@ -18,37 +49,18 @@ body{
 
 
 
-
-#book{
-	position: absolute;
-	bottom: 42%;
-	top: 850px;
-	height: auto;
-	border-radius: 5px;
-	font-size: 14pt;
-	text-align: center;
-	max-width: 80%;
-	max-height: auto;
-	shadow: 0px 4px 8px 0px rgba(0,0,0,0.84);
-	
-}
-
-#book form{
-	background-color: #FFFFFF;
-	color: #606060;
-}
-
 .nav-link {
   padding: 0.5rem 1rem;
 	color: #FF7600;
 
 }
-  .nav-link:hover{
-		color: #707070;
-	}
-	.nav-link:focus {
-    text-decoration: none; }
-  .nav-link.disabled {
+.nav-link:hover{
+	color: #707070;
+}
+.nav-link:focus {
+    text-decoration: none; 
+}
+.nav-link.disabled {
     color: #FF7600; }
 
 .row .col-md-6 .img-fluid {
@@ -66,7 +78,6 @@ body{
 }
 .col-md-6 h2 {
 	color: #FF7600;
-	font-family: "Arial Black", sans-serif;
 	font-size: 24pt;
 	text-align: left;
 	margin-left: 14px;
@@ -74,7 +85,6 @@ body{
 }
 .row .col-md-6 h3 {
 	color: #606060;
-	font-family: "Arial Black", sans-serif;
 	font-size: 26pt;
 	text-align: left;
 	margin-left: 10px;
@@ -83,7 +93,7 @@ body{
 	margin-left: 10px;
 	color: #707070;
 	font-style: normal;
-	font-family: Arial, sans-serif;
+	
 }
 .row .col-md-6 .btn.my-2.my-sm-0 {
 	background-color: #FF7600;
@@ -95,21 +105,6 @@ body{
 	border-bottom-left-radius: 5px;
 	margin-top: 24px;
 }
-.form-inline.my-2.my-lg-0 .btn.my-2.my-sm-0 {
-	background-color: #FF7600;
-	color: #FFFFFF;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-}
-
-.form-inline.my-2.my-lg-0 .btn.my-2.my-sm-0:hover {
-	background-color: #707070;
-	color: #FFFFFF;
-
-}
-
 
 
 .navbar-brand {
@@ -124,9 +119,9 @@ body{
 }
 
 
-#home {
-	position: relative;
-}
+
+
+
 
 
 .rcolumn {
@@ -139,7 +134,7 @@ body{
   content: "";
   display: table;
   clear: both;
-	margin-left: auto;
+  margin-left: auto;
   margin-right: auto;
 }
 
@@ -188,51 +183,6 @@ body{
 
 
 
-#abt1{
-	position: relative;
-	align-content: center;
-	padding-bottom: 70px;
-	margin-bottom: 170px;
-}
-
-
-.abt {
-	position: absolute;
-	left: 10%;
-	background-color: #FFFFFF;
-	border-top-left-radius: 25px;
-	border-top-right-radius: 25px;
-	border-bottom-right-radius: 25px;
-	border-bottom-left-radius: 25px;
-	box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.84);
-	max-width: 80%;
-	max-height: auto;
-	margin-top: 190px;
-	padding: 30px;
-
-
-
-}
-.abt h2 {
-	color: rgba(255,118,0,1.00);
-	font-size: 22pt;
-	text-align: left;
-	font-weight: bold;
-}
-
-.abt h3 {
-	color: #707070;
-	font-size: 20pt;
-	text-align: left;
-}
-
-.abt p {
-	color: #707070;
-	font-size: 16pt;
-	text-align: left;
-}
-
-
 .faci {
 	position: absolute;
 	left: 60%;
@@ -265,11 +215,24 @@ body{
 	margin-left: -30px;
 }
 
+#rooms h3 {
+	color: rgba(112,112,112,1.00);
+	font-size: 14pt;
+	text-align: left;
+}
+#rooms h2 {
+	color: rgba(255,118,0,1.00);
+	font-size: 24pt;
+	text-align: left;
+	margin-top: 20px;
+}
+
 
 .img-fluid {
 	margin-top: 100px;
 	margin-bottom: 100px;
 }
+
 .navbar.fixed-top.navbar-expand-lg {
 	background-color: rgba(255,255,255,1.00);
 	color: rgba(255,118,0,1.00);
@@ -320,15 +283,6 @@ body{
 .row .col-md-6 p {
 	font-size: 18pt;
 	margin-bottom: 30px;
-}
-#home h1 {
-	position: absolute;
-	bottom: 42%;
-	left: 20%;
-	color: rgba(255,255,255,1.00);
-	text-shadow: 4px 5px 8px rgba(112,112,112,1.00);
-	font-size: 4em;
-	text-align: center;
 }
 
 
@@ -422,17 +376,7 @@ body{
 	width: auto;
 	margin-top: 20px;
 }
-#rooms h3 {
-	color: rgba(112,112,112,1.00);
-	font-size: 14pt;
-	text-align: left;
-}
-#rooms h2 {
-	color: rgba(255,118,0,1.00);
-	font-size: 21pt;
-	text-align: left;
-	margin-top: 20px;
-}
+
 .navbar-brand {
 	background-image: url(../icons/Afriroyal%20logo-01.svg);
 }
@@ -465,19 +409,12 @@ body{
     width: 100%;
   }
 
-	#home h1 {
-	font-size: 2em;
-}
+
 
 .abt{
 	margin-top: 150px;
 }
 
-#book{
-	top: 50%;
-	height: auto;
-	font-size: 14pt;
-}
 
 
 }
@@ -487,7 +424,7 @@ body{
 
 @media screen and (max-width:600px){
 
-	#facility .faci {
+#facility .faci {
 		left: 20%;
 		margin-top: 40px;
 		padding-left: 15px;
@@ -496,7 +433,7 @@ body{
 	}
 
 
-	.faci ul {
+.faci ul {
 	font-size: 12pt;
 	line-height: normal;
 
@@ -515,9 +452,6 @@ body{
     width: 100%;
 }
 
-	#home h1 {
-	font-size: 2em;
-}
 
 #about1 .about1 {
 	top: 15%;
@@ -531,7 +465,7 @@ body{
 #about
 
 #event {
-	margin-top: 100px;
+	margin-top: 90px;
 
 }
 
@@ -539,16 +473,7 @@ body{
 	margin-top: 50px;
 }
 
-#abt1{
-	padding-bottom: 200px;
-	margin-bottom: 550px;
-}
 
-#book{
-	top: 45%;
-	height: auto;
-	font-size: 14pt;
-}
 
 
 }

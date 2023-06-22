@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}Payment | AfriroyalHotel{% endblock title %} 
+
+{% block content %}
+
+<section class="section-content padding-y bg">
+    <br><br><br><br>
+<div class="container">
+
+
+<div class="row">
+	<aside class="col-lg-8">
+
+        <div class="card my-2">
+        <div class="card-body">
+            <h5 class="card-text mb-0">Review Your Order & Make Payment</h5>
+        </div>
+        </div>
+
+
+    <div class="card my-2">
+        <h5 class="card-header">Billing Address</h5>
+        <div class="card-body">
+            <p class="card-text mb-0">{{order.full_name}}</p>
+            <p class="card-text mb-0">{{order.full_address}}</p>
+            <p class="card-text mb-0">{{order.city}}, {{order.state}}</p>
+            <p class="card-text mb-0">{{order.country}}</p>
+            <p class="card-text mb-0">{{order.email}}</p>
+            <p class="card-text mb-0">{{order.phone}}</p>
+            {% if order.order_note %}
+            <b>Order Note: </b> {{order.order_note}}
+            {% endif %}
+        </div>
+      </div>
+
+      <div class="card my-2">
+        <h5 class="card-header">Payment Method</h5>
+        <div class="card-body">
+            <p class="card-text">PayStack</p>
+        </div>
+      </div>
+
+      <div class="card my-2">
+        <h5 class="card-header">Review Products</h5>
+        <div class="card-body">
+            <table class="table table-borderless table-shopping-cart">
+                <thead class="text-muted">
+                    <tr class="small text-uppercase">
+                        <th scope="col">Product</th>
+                        <th scope="col" width="120">Days</th>
+                        <th scope="col" width="120">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for reservation_item in reservation_items %}
+                    <tr>
+                        <td>
+                            <figure class="itemside align-items-center">
+                                <div class="aside"><img src="{{ reservation_item.product.images.url }}"
+                                        class="img-sm"></div>
+                                <figcaption class="info">
+                                    <a href="{{ reservation_item.product.get_url }}"
+                                        class="title text-dark">{{ reservation_item.product.product_name }}</a>
+                                    <p class="text-muted small">
+                                        {% if reservation_item.variations.all %}
+                                        {% for item in reservation_item.variations.all %}
+                                        {{ item.variation_category | capfirst }} :
+                                        {{ item.variation_value | capfirst }} <br>
+                                        {% endfor %}
+                                        {% endif %}
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </td>
+                        <td>
+                            <!-- col.// -->
+                            <label for="">{{reservation_item.quantity}}</label>
+                        </td>
+                        <td>
+                            <div class="price-wrap">
+                                <var class="price">$ {{ reservation_item.sub_total }}</var>
+                                <small class="text-muted"> $ {{ reservation_item.product.price }} each </small>
+                            </div> <!-- price-wrap .// -->
+                        </td>
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+      </div>
+
+
+
+	</aside> <!-- col.// -->
+	<aside class="col-lg-4">
+
+		<div class="card">
+		<div class="card-body">
+			<dl class="dlist-align">
+			  <dt>Total price:</dt>
+			  <dd class="text-right">$ {{total}}</dd>
+			</dl>
+			<dl class="dlist-align">
+			  <dt>Tax:</dt>
+			  <dd class="text-right"> $ {{tax}}</dd>
+			</dl>
+			<dl class="dlist-align">
+			  <dt>Grand Total:</dt>
+			  <dd class="text-right text-dark b"><strong>$ {{grand_total}}</strong></dd>
+			</dl>
+			<hr>
+			<p class="text-center mb-3">
+				<img src="{% static './images/misc/payments.png' %}" height="26">
+			</p>
+
+       
+
+			<!-- Set up a container element for the button -->
+            <div id="paypal-button-container">
+                <!-- PayPal Button will Load... -->
+            </div>
+
+            <!-- Set up a container element for the button -->
+
+            <form id="paymentForm">
+              <div class="form-group">
+               <!-- <label for="email">Email Address</label>  --> 
+                <input type="hidden" class="form-control"  id="email-address"  value="{{order.email}}"  required />
+              </div>
+              <div class="form-group">
+                <!-- <label for="amount">Amount</label>  --> 
+                
+                <input type="hidden"  class="form-control" id="amount"   value="{{ grand_total }}"  required />
+              </div>
+              
+              <div class="form-submit">
+                <button type="submit"  class="btn btn-success btn-block"   onclick="payWithPaystack()"> Make Payment  </button>
+              </div>
+            </form>
+            
+            <script src="https://js.paystack.co/v1/inline.js"></script> 
+               
+                
+              
+
+            
+
+		</div> <!-- card-body.// -->
+		</div> <!-- card.// -->
+
+</aside> <!-- col.// -->
+
+
+</div> <!-- row.// -->
+<!-- ============================ COMPONENT 1 END .// ================================= -->
+
+</div> <!-- container .//  -->
+
+</section>
+
+
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+<script>
+  const paymentForm = document.getElementById('paymentForm');
+  paymentForm.addEventListener("submit", payWithPaystack, false);
+  function payWithPaystack(e) {
+    e.preventDefault();
+  
+    let handler = PaystackPop.setup({
+      key: 'pk_test_77baf593ecd4cdf749d837e4266812178bf01ad2',
+       // Replace with your public key
+      email: document.getElementById("email-address").value,
+      amount: document.getElementById("amount").value * 100,
+      currency: 'GHS',
+      ref: '{{order.order_number}}',
+      
+      
+      //+Math.floor((Math.random() * 1000000000) + 1), 
+      
+      // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      // label: "Optional string that replaces customer email"
+      onClose: function(){
+        alert('Window closed.');
+      },
+      callback: function(response){
+        let message = 'Payment complete! Reference: ' + response.reference;
+        alert(message);
+      }
+    });
+  
+    handler.openIframe();
+  }
+</script>
+
+
+
+
+
+
+
+
+{% endblock %}
